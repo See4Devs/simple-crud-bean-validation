@@ -1,9 +1,6 @@
 package com.example.simplecrudbeanvalidation.model;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 @Entity
 @Table(name="users")
@@ -25,6 +22,7 @@ public class User {
     @NotNull
     @NotEmpty
     @Size(min = 8, max = 64)
+    @Pattern(regexp="^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{8,64}$")
     private String password;
 
     public Long getId() {
