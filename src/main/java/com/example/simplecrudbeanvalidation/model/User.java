@@ -12,6 +12,7 @@ public class User {
 
     @NotNull
     @NotEmpty
+    @Pattern(regexp = "[a-zA-Z0-9 ]")
     private String name;
 
     @NotNull
